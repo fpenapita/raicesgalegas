@@ -1,0 +1,71 @@
+<%
+# Copyright (C) 2010 Felipe Peña Pita
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License Version 3
+# as published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+-%>
+<% content_for(:head_contrib) do -%>
+  <% #Needed for redbox %>
+  <%= stylesheet_link_tag 'redbox' %>
+  <%= javascript_include_tag 'prototype' %>
+  <%= javascript_include_tag 'effects' %>
+  <%= javascript_include_tag 'redbox' %>
+<% end -%>
+
+<div id="add_user" class="content_with_sidebar">
+    <div id="inner_content_title">
+  		<h1><%=t('user.add_user.title')%></h1>
+  	</div>
+  	<div class="clear"></div>
+    <% form_for @user do |form| -%>
+        <%= form.error_messages %>
+        <div class="text_field">
+            <%= form.label :login, t('user.login') %>
+            <%= form.text_field :login %>
+        </div>
+        <div class="text_field">
+            <%= form.label :name, t('user.name') %>
+            <%= form.text_field :name %>
+        </div>
+        <div class="text_field">
+            <%= form.label :email, t('user.email') %>
+            <%= form.text_field :email %>
+        </div>
+        <div class="text_field">
+            <%= form.label :password, t('user.password') %>
+            <%= form.password_field :password %>
+        </div>
+        <div class="text_field">
+            <%= form.label :password_confirmation, t('user.password_confirmation') %>
+            <%= form.password_field :password_confirmation %>
+        </div>
+        <div class="clear"></div>
+        <div class="text_field terms">
+			    <span class="checkbox">
+            <%= form.check_box(:accept_terms)%>
+			    </span>
+          <%= t('user.terms.accept') %>
+          <%= link_to_redbox(t('user.terms.open'), 'hidden_terms', :class => 'identification_link') %>
+        </div>
+        <div class="buttons">
+            <%= form.submit t('user.new_user') %>
+        </div>
+    <% end -%>
+</div>
+
+<div id="hidden_terms">
+  <%= render :partial => 'public/terms' -%>
+  <div class="link">
+    <%= link_to_close_redbox t 'user.terms.close' %>
+  </div>
+</div>

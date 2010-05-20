@@ -1,0 +1,522 @@
+/*
+Copyright (C) 2010 Felipe Peña Pita
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License Version 3
+as published by the Free Software Foundation.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+*/
+
+#login span {
+	color:#787878;
+	font-size:0.9em;
+	margin-left:225px;
+}
+
+#login span a {
+		padding: 0;
+    color: #e04;
+}
+
+#login span a:hover {
+    color: #a04;
+		background-color: #FFFFFF;
+}
+
+#login div.buttons {
+	margin:10px 0 10px 140px;
+}
+
+#basic_search div.buttons {
+	float: right;
+	margin-right: 68px;
+}
+
+#basic_search a {
+	float: left;
+	margin-left: 225px;
+	font-size: .9em;
+}
+
+.tag_cloud {
+    /*margin-left: auto;
+    margin-right: auto;*/
+		margin: 0 auto;
+		padding-top: 15px;
+		width: 500px;
+}
+
+.tag_cloud1 {
+    font-size: 1.0em;
+}
+
+.tag_cloud2 {
+    font-size: 1.4em;
+}
+
+.tag_cloud3 {
+    font-size: 2.0em;
+}
+
+.tag_cloud4 {
+    font-size: 2.6em;
+}
+
+#basic_search {
+    margin-bottom: 25px;
+		margin-top: 25px;
+}
+
+#basic_search .text_field {
+    display: inline;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#basic_search .buttons {
+    display: inline;
+}
+
+#advanced_search {
+    display: none;
+		margin-top: 25px;
+}
+
+#advanced_search .text_field {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+div.emigrant {
+	background: url('../images/emigrant_card_bg.png') no-repeat top left;
+	padding: 20px 40px;
+}
+
+div.emigrant h2 {
+	margin-bottom: 20px;
+}
+
+div.emigrant span.image {
+	display: block;
+	float: left;
+	height: 160px;
+	padding-top: 10px;
+	padding-left: 30px;
+}
+
+#content div.emigrant p {
+	float: left;
+	line-height: 120%;
+	margin-bottom: 22px;
+	margin-left: 30px;
+	text-align: left;
+	width: 310px;
+}
+
+div.emigrant p span.fixed_text {
+	font-style: italic;
+}
+
+div.emigrant p span.desc_text {
+	font-size: 1.2em;
+	font-family:'Lucida Sans',Verdana,sans-serif;
+	font-weight: bold;
+	margin-left: 10px;
+	text-shadow: -1px 1px 1px #AAAAAA;
+}
+
+#content a.link_right {
+	float: right;
+}
+
+#details {
+
+}
+
+#details h3 {
+	color: #5A554E;
+	margin-bottom: 10px;
+}
+
+#details p {
+	border:2px solid #CCCCCC;
+	line-height: 130%;
+	padding: 10px;
+
+/*    -moz-box-shadow:0 1px 5px #333333;
+    -webkit-box-shadow:0 1px 5px #333333;
+*/
+}
+
+#add_user div.terms {
+	color: #787878;
+	font-size: .9em;
+	padding-left: 225px;
+}
+
+#add_user span.checkbox input {
+	width: 20px;
+}
+
+#add_user div.buttons {
+	margin-left:150px;
+	margin-top:10px;
+}
+
+/* Comments */
+
+#comment_list {
+	margin-top: 10px;
+}
+
+#comment_list div.comment_text img {
+	margin-left: 20px;
+}
+
+#comment_list div.comment_text p {
+	font-size:0.9em;
+	font-style:italic;
+	margin-left:10px;
+	padding:10px;
+}
+
+#comment_list div.comment_text div.align_left {
+	float: left;
+}
+
+#comments {
+    margin-top: 40px;
+}
+
+#comment_new {
+    margin-top: 25px;
+}
+
+#comment_new div.checkbox_field {
+	font-size: .9em;
+}
+
+#comment_new div.align_end {
+	margin-left:432px;
+}
+
+#comment_new div.text_area {
+	margin-top: 0;
+}
+
+#comment_new div.text_area_title {
+	color: #5A554E;
+	font-family:'Lucida Sans',Verdana,Arial,Sans;
+	font-size: 16px;
+	font-style:italic;
+	font-weight:bold;
+}
+
+#comment_new div.below_text_area {
+	margin-top: -14px;
+}
+
+.comment {
+    margin-bottom: 10px;
+	margin-left: 10px;
+    margin-top: 10px;
+	padding: 10px;
+    border: 2px solid #AAAAAA;
+/*      -khtml-border-radius:20px;
+        -khtml-box-shadow:0 1px 5px #333333;
+        -moz-border-radius:20px;
+        -moz-box-shadow:0 1px 5px #333333;
+        -opera-border-radius:20px;
+        -opera-box-shadow:0 1px 5px #333333;
+        -webkit-border-radius:20px;
+        -webkit-box-shadow:0 1px 5px #333333;*/
+}
+
+#num_private_comments {
+	font-size:0.9em;
+	font-style:italic;
+}
+
+#hidden_terms {
+    display: none;
+    border: 5px solid #999;
+}
+
+#hidden_terms #terms {
+		padding: 10px 0;
+    width: 850px;
+}
+
+#hidden_terms #terms p {
+  	font-size: 0.7em;
+  	line-height: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+		margin-left: auto;
+    margin-right: auto;
+		padding: 0 10px;
+		text-align: justify;
+}
+
+#hidden_terms #terms h3 {
+		color: #000000;
+		letter-spacing: -1px;
+		text-align: center;
+}
+
+#hidden_terms div.link {
+		padding: 0 0 20px 0;
+		text-align: center;
+}
+
+#hidden_terms div.link a {
+		color: #787878;
+		text-decoration: none;
+}
+
+#hidden_terms div.link a:hover {
+		color: #FFFFFF;
+		background-color: #787878;
+}
+
+#public_terms #terms h3 {
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#public_terms #terms p {
+    line-height: 20px;
+    margin: 10px auto;
+    text-align: justify;
+    width: 550px;
+}
+
+#credits h3 {
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#credits #credits_title {
+    margin-bottom: 25px;
+}
+
+#credits #credits_links {
+    margin-top: 70px;
+    margin-bottom: 25px;
+}
+
+#credits a {
+    text-decoration: none;
+}
+
+#credits p {
+    line-height: 20px;
+    margin: 10px auto;
+    text-align: justify;
+    width: 550px;
+}
+
+#credits p span {
+    font-weight: bold;
+}
+
+#credits ul {
+    list-style: disc outside none;
+    margin-left: 30px;
+}
+
+/*** Forms ********************************************************************/
+
+.text_field label,
+.text_field input,
+.checkbox_field input,
+.select_field select,
+.text_area input {
+	font-family: 'Lucida Sans',Verdana,Arial,Sans;
+	font-size: 16px;
+}
+
+.text_field label {
+	margin: 10px 10px 0 5px;
+	display: block;
+	float: left;
+	height: 23px;
+	text-align: right;
+	width: 210px;
+	padding: 0;
+}
+
+.text_field input,
+.checkbox_field input,
+.select_field select,
+.text_area input {
+	background-color:#F9F9F9;
+	border:1px solid #DDDDDD;
+	color:#444444;
+	font-family: 'Lucida Sans', Verdana,sans-serif;
+	font-weight:bold;
+	letter-spacing:normal;
+	line-height:24px;
+	margin:5px 0;
+	padding:4px 4px 5px;
+	text-shadow:-1px 1px 1px #AAAAAA;
+
+/*  -moz-border-radius: 5px;
+    -moz-box-shadow:0 0 2px #000000;
+    -webkit-border-radius: 5px;
+    -webkit-box-shadow:0 0 2px #000000;*/
+}
+
+.text_field input,
+.select_field select,
+.text_area input {
+    width: 16em;
+}
+
+.text_area label {
+    vertical-align: top;
+}
+
+.text_field,
+.checkbox_field,
+.select_field select {
+    margin-bottom: 1px;
+}
+
+.text_area {
+	margin-top: 30px;
+}
+
+div.text_area div.text_area_title {
+	font-size: 1.6em;
+	padding: 10px;
+}
+
+div.text_area div.text_area_title #galician_recomendation {
+    display:block;
+    font-size:0.65em;
+		font-style:italic;
+		font-weight:normal;
+}
+
+div.text_field img {
+	float: right;
+	margin-right: 190px;
+}
+
+.buttons {
+	padding: 10px;
+	text-align: center;
+}
+
+.view_document {
+    background-image: url("/images/document_text_down_32.png");
+    position: absolute;
+    height: 32px;
+    width: 32px;
+    margin-left: 40px;
+    text-indent: -999px;
+}
+
+.custom_file_input,
+.identifications_file_input {
+    margin-right: 10px;
+}
+
+.buttons input,
+.fake_button {
+    border: 2px solid #888;
+    background: #ccc;
+    padding: 4px 12px;
+    font-size: 110%;
+    font-weight: bold;
+    background: #FFF;
+    color: #000;
+    text-decoration: none;
+}
+
+.fake_button:hover,
+.buttons input:hover {
+    background: #FFF;
+    color: #c42e17;
+}
+
+.buttons a {
+    padding-left: 10px;
+}
+
+
+/*** Errores/Notificaciones ***************************************************/
+
+#notifications {
+	height: 30px;
+	margin-bottom: 15px;
+	font-family: Verdana, "Trebuchet MS", Georgia, "Times New Roman", Times, serif;
+	font-size: 12px;
+	font-weight: bolder;
+	letter-spacing: -.5px;
+}
+
+#notice {
+	background-color:#ABDEBE;
+	border:2px solid #CCCCCC;
+    color: #FFFFFF;
+	float: right;
+    text-align: right;
+	padding: 5px 10px;
+/*  -moz-border-radius: 20px;
+    -moz-box-shadow:0 1px 5px #333333;
+    -webkit-border-radius: 20px;
+    -webkit-box-shadow:0 1px 5px #333333;*/
+}
+
+#error {
+    color: red;
+    text-align: right;
+}
+
+.fieldWithErrors {
+  background-color: #EF7777;
+}
+
+#errorExplanation {
+  width: 500px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+  letter-spacing: 0;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+}

@@ -1,0 +1,46 @@
+<%
+# Copyright (C) 2010 Felipe Peña Pita
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License Version 3
+# as published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+-%>
+<ul>
+  <% for emigrant in @highlighted_emigrants -%>
+    <li>
+      <span class="marker">&nbsp;</span>
+      <%= link_to h(emigrant.name), emigrant %><br/>
+      <p><span class="fixed_text"><%=t 'home.sidebar.born_in' %></span>
+
+      <% if emigrant.birth_place? -%>
+        <span class="desc_text"><%= h emigrant.birth_place %></span>.
+      <% else -%>
+        <span class="desc_text"><%= t 'home.sidebar.unknown' %></span>.
+      <% end -%>
+
+      <span class="fixed_text"><%=t 'home.sidebar.emigrate_in' %></span>
+
+      <% unless emigrant.destination_place.blank? -%>
+        <span class="desc_text"><%= h emigrant.destination_place %></span>
+      <% else -%>
+        <span class="desc_text"><%= t 'home.sidebar.unknown' %></span>
+      <% end -%>
+
+      <span class="fixed_text"><%=t 'home.sidebar.since_year'  %></span>
+      <% if emigrant.departure_year -%>
+        <span class="desc_text"><%= h emigrant.departure_year %></span>.</p>
+      <% else -%>
+        <span class="desc_text"><%= t 'home.sidebar.unknown' %></span>.</p>
+      <% end -%>
+    </li>
+  <% end -%>
+</ul>

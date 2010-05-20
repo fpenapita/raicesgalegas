@@ -1,0 +1,42 @@
+<%
+# Copyright (C) 2010 Felipe Peña Pita
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License Version 3
+# as published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+-%>
+<div id="home">
+    <div id="what">
+      <h1><%=t('home.what')-%></h1>
+    </div>
+    <div id="headerPanelfast">
+    	<h2><%=link_to t('home.query.title'), emigrants_path -%></h2>
+    	<p><%=t('home.query.description')-%></p>
+    </div>
+    <div id="headerPanelsecond">
+    	<h2><%=link_to t('home.look_from_galician.title'), family_path -%></h2>
+    	<p><%=t('home.look_from_galician.description')-%></p>
+    </div>
+    <div id="headerPanelthird">
+    	<h2><%=link_to t('home.look_abroad.title'), i_am_emigrant_path -%></h2>
+    	<p><%=t('home.look_abroad.description')-%></p>
+    </div>
+    <div id="tags">
+      <h2><%=t('home.tags.title')%></h2>
+      <div class="tag_cloud">
+        <% tag_cloud(@tags, %w(tag_cloud1 tag_cloud2 tag_cloud3 tag_cloud4)) do |tag, css_class| %>
+          <%= link_to h(tag.name), { :controller => :emigrants, :action => :find_tagged, :tag => h(tag.name) }, :class => css_class %>
+        <% end %>
+      </div>
+    </div>
+    <div class="clear"></div>
+</div>

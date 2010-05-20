@@ -1,0 +1,405 @@
+# Copyright (C) 2010 Felipe Peña Pita
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License Version 3
+# as published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+# Galician (Spain) for Ruby on Rails
+# by Marcos Arias Pena (markus@agil-e.com)
+
+gl:
+  # action_view
+  number:
+    # Usado en number_with_delimiter()
+    format:
+      separator: ","
+      delimiter: "."
+      precision: 2
+
+    # Usado en number_to_currency()
+    currency:
+      format:
+        # %u é a unidade monetaria, %n o número
+        # 1 euro sería 1.00 €
+        format: "%n %u"
+        unit: "€"
+        separator: ","
+        delimiter: "."
+        precision: 2
+
+    # Usado en number_to_percentage()
+    percentage:
+      format:
+        # separator:
+        delimiter: ""
+        # precision:
+
+    # Usado en number_to_precision()
+    precision:
+      format:
+        # separator:
+        delimiter: ""
+        # precision:
+
+    # Usado en number_to_human_size()
+    human:
+      format:
+        # separator:
+        delimiter: ""
+        precision: 1
+      # Se estás a usar Rails <= 2.2.2
+      # storage_units: [Bytes, KB, MB, GB, TB]
+      # Se estás a usar Rails >= 2.3
+      storage_units:
+        # Formato de saida de unidades de almacenamento
+        # %u é a unidade de almacenamento
+        # %n é o número (por defecto: 2 MB)
+        format: "%n %u"
+        units:
+          byte:
+            one:   "Byte"
+            other: "Bytes"
+          kb: "KB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"
+
+  # active_support
+  date:
+    formats:
+      default:  "%e/%m/%Y"
+      short:    "%e %b"
+      long:     "%A %e de %B de %Y"
+      # Podes engadir máis formatos nesta lista ou cambiar os aquí definidos
+    day_names:        [Domingo, Luns, Martes, Mércores, Xoves, Venres, Sábado]
+    abbr_day_names:   [Dom, Lun, Mar, Mer, Xov, Ven, Sab]
+    month_names:      [~, Xaneiro, Febreiro, Marzo, Abril, Maio, Xuño, Xullo, Agosto, Setembro, Outubro, Novembro, Decembro]
+    abbr_month_names: [~, Xan, Feb, Mar, Abr, Mai, Xuñ, Xul, Ago, Set, Out, Nov, Dec]
+    order:            [:day, :month, :year]
+
+  time:
+    formats:
+      default:    "%A, %e de %B de %Y ás %H:%M"
+      time:       "%H:%M"
+      short:      "%e/%m, %H:%M"
+      long:       "%A %e de %B de %Y ás %H:%M"
+      # Podes engadir máis formatos nesta lista ou cambiar os aquí definidos
+    am: ''
+    pm: ''
+
+  # Usados en distance_of_time_in_words(), distance_of_time_in_words_to_now(), time_ago_in_words()
+  datetime:
+    distance_in_words:
+      half_a_minute: 'medio minuto'
+      less_than_x_seconds:
+        zero: 'menos dun segundo'
+        one: '1 segundo'
+        few: 'poucos segundos'
+        other: '{{count}} segundos'
+      x_seconds:
+        one: '1 segundo'
+        other: '{{count}} segundos'
+      less_than_x_minutes:
+        zero: 'menos dun minuto'
+        one: '1 minuto'
+        other: '{{count}} minutos'
+      x_minutes:
+        one: '1 minuto'
+        other: '{{count}} minutos'
+      about_x_hours:
+        one: 'aproximadamente unha hora'
+        other: '{{count}} horas'
+      x_days:
+        one: '1 día'
+        other: '{{count}} días'
+      x_weeks:
+        one: '1 semana'
+        other: '{{count}} semanas'
+      about_x_months:
+        one: 'aproximadamente 1 mes'
+        other: '{{count}} meses'
+      x_months:
+        one: '1 mes'
+        other: '{{count}} meses'
+      about_x_years:
+        one: 'aproximadamente 1 ano'
+        other: '{{count}} anos'
+      over_x_years:
+        one: 'máis dun ano'
+        other: '{{count}} anos'
+      now: 'agora'
+      today: 'hoxe'
+      tomorrow: 'mañá'
+      in: 'dentro de'
+
+  support:
+    array:
+      # Se estás a usar Rails <= 2.2.2
+      # sentence_connector: e
+      # Se estás a usar Rails >= 2.3
+      words_connector: ", "
+      two_words_connector: " e "
+      last_word_connector: " e "
+
+  # active_record
+  activerecord:
+    models:
+    # Traduce nomes de modelos. Usado en Model.human_name()
+    # Por exemplo
+    # model:
+    #   user: "Nota"
+    #   traducirá o modelo User como "Nota"
+
+    attributes:
+    # Traduce nomes de atributos de modelos. Usado en Model.human_attribute_name(attribute)
+    # Por exemplo
+    # attributes:
+    #   user:
+    #     login: "Aceso"
+    #     traducirá o atribute login do modelo User como "Aceso"
+
+    errors:
+      template:
+        header:
+          one: "1 erro evitou que se poidese gardar o {{model}}"
+          other: "{{count}} erros evitaron que se poidese gardar o {{model}}"
+        # A variable :count tamén está dispoñible aquí
+        body: "Atopáronse os seguintes problemas:"
+      messages:
+        inclusion: "non está incluido na lista"
+        exclusion: "xa existe"
+        invalid: "non é válido"
+        confirmation: "non coincide coa confirmación"
+        accepted: "debe ser aceptado"
+        empty: "non pode estar valeiro"
+        blank: "non pode estar en blanco"
+        too_long: "é demasiado longo (non máis de {{count}} carácteres)"
+        too_short: "é demasiado curto (non menos de {{count}} carácteres)"
+        wrong_length: "non ten a lonxitude correcta (debe ser de {{count}} carácteres)"
+        taken: "non está dispoñible"
+        not_a_number: "non é un número"
+        greater_than: "debe ser maior que {{count}}"
+        greater_than_or_equal_to: "debe ser maior ou igual que {{count}}"
+        equal_to: "debe ser igual a {{count}}"
+        less_than: "debe ser menor que {{count}}"
+        less_than_or_equal_to: "debe ser menor ou igual que {{count}}"
+        odd: "debe ser par"
+        even: "debe ser impar"
+        # Engade aquí os teus propios mensaxes de erro ou no ámbito modelo/atributo
+
+        # Podes definir os teus propios erros para modelos ou para os atributos dun modelo
+        # Os valores :model, :attribute e :value están sempre dispoñibles para a interpolación
+        #
+        # Exemplos avanzados
+        # models:
+        #   user:
+        #     blank: "Esta é unha mensaxe personalizada para o modelo {{model}}: {{attribute}}"
+        #     attributes:
+        #       login:
+        #         blank: "Esta é unha mensaxe personalidaza para o modelo Usuario: login"
+
+
+# APPLICATION'S MENSSAGES
+  this_file_language: Galego
+
+  home:
+    access: "Acceso"
+    credits: "Créditos"
+    lenguage: "Idioma"
+    logout: "Saír"
+    look_abroad:
+      title: "Estou emigrado"
+      description: "Se estás no estranxeiro e buscas retomar o contacto con aquela xente que quedou en Galicia engade aquí a túa historia para que pase a formar parte de RaicesGalegas.org"
+    look_from_galician:
+      title: "Son familiar de emigrantes"
+      description: "Engade a RaicesGalegas.org a historia dalgún emigrante que coñezas e do que esteas interesado en recuperar o contacto."
+    query:
+      title: "Encóntrame..."
+      description: "Busca a aquela persoa coa que queres retomar o contacto, tanto se eres un emigrante na procura dalgún familiar ou coñecido que deixaches na túa terra nai; como se eres un galego residente na túa terra nai e buscas a algún emigrante."
+    raices: "Raíces Galegas"
+    sidebar:
+      born_in: "Nado en "
+      emigrate_in: " Emigrado en "
+      since_year: " desde o ano "
+      title1: "Como che axudamos?"
+      title2: "Coñécesme?"
+      text1:
+        bold: "Raíces Galegas"
+        normal: " pretende axudar aos nosos emigrantes na procura das súas raíces na nosa terra, facendo de nexo de unión entre estes e a xente que se viu obrigada a deixar atrás pero que permaneceron no seu recordo"
+      unknown: "descoñecido"
+    tags:
+      title: "Que podes encontrar aquí?"
+    terms_of_use: "Termos de Uso"
+    title: "Raíces Galegas"
+    what: "Estás buscando a túa familia galega?"
+
+  login:
+    here: "aquí"
+    if_you_dont: "se todavía non o fixeches"
+    must_be_logged_in: "Debes introducir a túa clave de acceso para acceder a esta páxina"
+    must_be_logged_out: "Debes saír da aplicación para acceder a esta páxina"
+    password: "Contrasinal"
+    signup: "Rexistrate de balde"
+    submit: "Acceder"
+    successful:
+      login: "Acceso correcto"
+      logout: "Saíu correctamente da aplicación"
+    title: "Introduce o teu usuario"
+    username: "Usuario"
+
+  user:
+    activation:
+      succesful: "A túa conta foi activada correctamente"
+      unable: "Non foi posible activar a túa conta. Comproba que proporcionaches a información correcta"
+    add_user:
+      title: "Crea o teu usuario"
+    create:
+      succesful: "Usuario creado correctamente. Para activar a túa conta comproba o teu correo e sigue as instruccións"
+    email: "Email"
+    error:
+      not_activated: "Usuario todavía non activado"
+    login: "Usuario"
+    mail:
+      activated:
+        message: "A túa conta foi activada. Agora podes crear a túa historia para atopar a túa familia, amigos, etc"
+        subject: "A túa conta foi activada!!"
+        title: "Ola {{name}}"
+      created:
+        activate: "Activar Conta"
+        message: "A túa conta foi creada. Por favor actívaa por medio do seguinte enlace"
+        subject: "Por favor activa a túa nova conta en \"Raíces Galegas\""
+        title: "Ola {{name}}"
+      team: "O equipo de \"Raíces Galegas\""
+    name: "Nome"
+    new_user: "Crear Usuario"
+    password: "Contrasinal"
+    password_confirmation: "Repita o Contrasinal"
+    terms:
+      accept: "Acepto os"
+      close: "Pechar"
+      open: "Termos de Uso"
+
+  emigrant:
+    back: "Volver"
+    birth_place: "Lugar de Nacemento"
+    birth_year: "Ano de Nacemento"
+    comments: "Comentarios"
+    comment:
+      email: "Email"
+      galician_recomendation: "(Recoméndase o uso da lingua galega normativa para os contidos engadidos)"
+      name: "Nome"
+      new: "Engadir Comentario"
+      private: "Privado"
+      terms:
+        accept: "Acepto os"
+        close: "Pechar"
+        open: "Termos de Uso"
+    created_successfully: "A historia do emigrante foi creada correctamente"
+    delete_sure: "¿Estás seguro de querer eliminar os datos?"
+    departure_year: "Ano da súa Partida"
+    destination_place: "Destino"
+    destroy: "Eliminar"
+    details: "Detalles"
+    dont_allow: "Non tes Permiso para Editar esta Historia"
+    edit: "Editar a Historia"
+    galician_recomendation: "(Recoméndase o uso da lingua galega normativa para os contidos engadidos)"
+    list: "Listado de Historias de Emigrantes"
+    name: "Nome"
+    new: "Crear Nova Historia"
+    pagination:
+      next: "Seguinte &gt;&gt;"
+      prev: "&lt;&lt; Anterior"
+      separator: " - "
+    photo: "Foto"
+    save: "Gardar"
+    search: "Buscar"
+    search_form:
+      title: "Encontra a quen buscas..."
+    show: "Ver a Historia do Emigrante"
+    show_advanced_search: "Mostrar Búsqueda Avanzada"
+    tag_list: "Etiquetas de Búsqueda"
+    updated_successfully: "A historia do emigrante foi actualizada correctamente"
+
+  comment:
+    ago: "Engadido fai {{posted_ago}}"
+    anonymous: "Anónimo"
+    commented_by: "Comentado por {{name}}: {{email}}"
+    mail:
+      subject: "Raíces Galegas - Novo Comentario na túa Historia"
+      team: "O equipo de \"Raíces Galegas\""
+      title: "Tes un novo comentario na túa historia. Podes vela historia enteira no seguinte enlace:"
+    private_comment: "Comentario Privado"
+    private_comments_count: "{{private_comments_count}} comentarios privados"
+
+  terms:
+    creative_commons:
+      p1: "O usuario asume a propiedade (ou en calquera caso, que posúe autorización do autor) de todo o contido e a información que publica nesta Web, entendendo que os traballos que suba a RaicesGalegas.org foron rexistrados previamente nas oficinas habilitadas polos órganos competentes. Por conseguinte, RaicesGalegas.org nin aproba, nin fai seus os produtos, servizos, contidos, información, datos, opinións arquivos e calquera clase de material existente na web."
+      p2: "Se O USUARIO recompila información doutros usuarios deberá obter o seu consentimento previo, deixar claro que é o propio usuario (e non RaicesGalegas.org) quen recompila a información, e publicar unha política de privacidade que explique que datos recompilou e como os vai usar."
+      p3: "RaicesGalegas.org esixe que nos contidos non aparezan menores de idade. Naqueles casos excepcionais onde aparezan menores de idade o usuario deberá ter o consentimento expreso dos seus pais ou representantes legais."
+      p4: "RaicesGalegas.org resérvase o dereito de vetar a entrada a calquera suxeito á web http://www.raicesgalegas.org e á súa vez resérvase o dereito de prohibir o uso de calquera programa e/ou información, en concordancia cos dereitos de autor outorgados polo artigo 14 LPI."
+      p5: "Aceptando estes termos legais O USUARIO concede a RaicesGalegas.org unha licenza non exclusiva, transferible, con posibilidade de ser sub-outorgada, sen royalties, aplicable globalmente, a utilizar todo o material que crea necesario existente no portal para promoción do mesmo respectando sempre a Lei Orgánica de protección de datos persoais 13/1999 e informando previamente á persoa que subise cada contido."
+      p6: "A cesión destes dereitos será para a súa publicación e explotación, rexéndose en todo caso polos termos da licenza \"Creative Commons Attribution - Share Alike 3.0\", segundo o ámbito de aplicación estipulado en http://creativecommons.org/licenses/by-sa/3.0/deed.gl"
+      p7: "A temporalidade desta cesión e licenzamento permanecerá ata que o usuario elimine os devanditos contidos ou no seu caso, a conta de usuario."
+    title: "Termos de Uso"
+
+  credits:
+    author: "Esta aplicación foi desenvolvida por Felipe Peña Pita e o seu código foi publicado como software libre que pode ser redistribuido e/ou modificado baixo os termos da "
+    documentation: "Documentación de Usuario"
+    documentation_odt: "odt"
+    documentation_pdf: "pdf"
+    forxa: "Páxina do proxecto na Forxa de Mancomún"
+    forxa_link: "Forxa"
+    github: "Páxina do proxecto en GitHub"
+    github_link: "GitHub"
+    license: "\"GNU Affero General Pulblic License Version 3\""
+    links: "Enlaces de interese"
+    links_text: "A continuación mostranse enlaces de interese relacionados coa aplicación:"
+    suggestions: "Para calquer suxerencia ou problema no uso da aplicación, pode utilizar os sistemas proporcionados polas páxinas do proxecto na Forxa de Mancomún ou en GitHub."
+    title: "Créditos"
+    video: "Vídeo demostrativo da aplicación"
+    youtube_link: "YouTube"
+
+  general_errors:
+    attachment_upload: "Sentímolo, houbo un erro subindo a imaxe (recorda que so se permiten imáxenes jpg e png)"
+    html_code:
+      error_404: "A páxina que está buscando non existe"
+      error_422: "O cambio que desexa foi rechazado"
+      error_500: "Sentímolo pero ocorreu un erro"
+
+# AUTHLOGIC'S MESSAGES
+  authlogic:
+      error_messages:
+        login_blank: "non pode estar en blanco"
+        login_not_found: "non é válido"
+        login_invalid: "debería usar so letras, números, espacios e .-_@ por favor"
+        consecutive_failed_logins_limit_exceeded: "O límite de fallos de autenticación foi excedido e a cuenta foi deshabilitada"
+        email_invalid: "debería ter a forma dunha dirección de email"
+        password_blank: "non pode estar en blanco"
+        password_invalid: "non é válido"
+        not_active: "A túa conta non está activa"
+        not_confirmed: "A túa conta non está confirmada"
+        not_approved: "A túa conta non está aprovada"
+        no_authentication_details: "Non se proporcionou ningún detalle para a autenticación"
+      models:
+        user_session: "UserSession"
+      attributes:
+        user_session:
+          login: "Usuario"
+          email: "email"
+          password: "contrasinal"
+          remember_me: "recordame"
+
+# PAPERCLIP'S MESSAGES
+  paperclip:
+      validate_attachment_content_type_error: "non é un dos tipos de ficheiro permitidos (jpg, png)"
+      validate_attachment_presence_error: "debe ser asignado"
+      validate_attachment_size_error: "o tamaño do ficheiro debe estar entre :min e :max bytes"

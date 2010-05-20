@@ -1,0 +1,100 @@
+<%
+# Copyright (C) 2010 Felipe Peña Pita
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License Version 3
+# as published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+-%>
+<% content_for(:head_contrib) do -%>
+  <%= javascript_include_tag :defaults %>
+  <%= include_tiny_mce_if_needed %>
+
+  <% #Needed for redbox %>
+  <%= stylesheet_link_tag 'redbox' %>
+  <%= javascript_include_tag 'prototype' %>
+  <%= javascript_include_tag 'effects' %>
+  <%= javascript_include_tag 'redbox' %>
+<% end -%>
+
+<%= render :partial => @emigrant %>
+
+<% unless @emigrant.details.blank? %>
+  <div id="details">
+    <h3><%= t('emigrant.details') -%>:</h3>
+    <%= @emigrant.details %>
+  </div>
+<% end %>
+
+<p>
+  <% if @emigrant.user == current_user -%>
+    <%= link_to t('emigrant.edit'), edit_emigrant_path(@emigrant) %> |
+    <%= link_to t('emigrant.destroy'), @emigrant, :method => :delete, :confirm => t('emigrant.delete_sure') %> |
+  <% end -%>
+  <%= link_to t('emigrant.back'), emigrants_path %>
+</p>
+
+<div id="comments">
+  <h2><%= t 'emigrant.comments' -%></h2>
+
+  <span id="num_private_comments">
+    (<%= t 'comment.private_comments_count', :private_comments_count => @private_comments -%>)
+  </span>
+
+  <div id="comment_list">
+    <%= render :partial => @emigrant.comments %>
+  </div>
+
+  <div id="comment_new">
+    <div id="comment_errors"></div>
+    <% remote_form_for :comment,
+      :url => {:action => 'add_comment', :emigrant_id => @emigrant},
+      :before =>"tinyMCE.triggerSave(true, true);",
+      :html => {:id => "new_comment_form"} do |f| %>
+      <%= f.error_messages %>
+
+      <div class="text_field">
+          <%= f.label :name, t('emigrant.comment.name') %>
+          <%= f.text_field :name, :value => (current_user ? h(current_user.name()) : '') %>
+      </div>
+      <div class="text_field">
+          <%= f.label :email, t('emigrant.comment.email') %>
+          <%= f.text_field :email, :value => (current_user ? h(current_user.email()) : '') %>
+      </div>
+      <div class="checkbox_field align_end">
+          <%= f.label :private, t('emigrant.comment.private') %>
+          <%= f.check_box(:private)%><br/>
+      </div>
+      <div class="text_area">
+        <div class="text_area_title">
+          <%= f.label :body, t('emigrant.comment.new') %>:
+    		  <span id="galician_recomendation"><%= t('emigrant.comment.galician_recomendation')%></span>
+        </div>
+        <%= f.text_area :body, :class => "mceEditor" %><br/>
+      </div>
+      <div class="checkbox_field below_text_area">
+          <%= f.check_box(:accept_terms)%>
+          <%= t('emigrant.comment.terms.accept') %>
+          <%= link_to_redbox(t('emigrant.comment.terms.open'), 'hidden_terms') %>
+      </div>
+      <div class="buttons">
+        <%= f.submit t('emigrant.comment.new') %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div id="hidden_terms">
+  <%= render :partial => 'public/terms' -%>
+  <div class="link">
+    <%= link_to_close_redbox t 'user.terms.close' %>
+  </div>
+</div>

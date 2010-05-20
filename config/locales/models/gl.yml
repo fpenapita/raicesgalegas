@@ -1,0 +1,48 @@
+# Copyright (C) 2010 Felipe Peña Pita
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License Version 3
+# as published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+gl:
+  activerecord:
+    models:
+      user: "Usuario"
+      user_session: "Sesión de Usuario"
+      emigrant: "Emigrante"
+      comment: "Comentario"
+
+    attributes:
+      user:
+        login: "Usuario"
+        email: "Email"
+        name: "Nome"
+        password: "Password"
+        password_confirmation: "Confirmación do Password"
+        accept_terms: "Aceptación dos Termos de Uso"
+
+      emigrant:
+        name: "Nome"
+        birth_place: "Lugar de Nacemento"
+        birth_year: "Ano de Nacemento"
+        departure_year: "Ano da súa Partida"
+        destination_place: "Destino"
+        details: "Detalles"
+        photo: "Foto"
+        tag_list: "Etiquetas"
+
+      comment:
+        accept_terms: "Aceptación dos Termos de Uso"
+        body: "Comentario"
+        email: "Email"
+        name: "Nome"
+        private: "Privado"

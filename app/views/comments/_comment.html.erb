@@ -1,0 +1,44 @@
+<%
+# Copyright (C) 2010 Felipe Peña Pita
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License Version 3
+# as published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+-%>
+
+<% if !comment.private || comment.emigrant.user == current_user %>
+  <% div_for comment do -%>
+    <div>
+      <% if comment.private -%>
+        <strong><%= t 'comment.private_comment' -%></strong>
+      <% end -%>
+
+      <strong><%= t 'comment.ago', :posted_ago => time_ago_in_words(comment.created_at) -%></strong><br />
+      <% if comment.emigrant.user == current_user -%>
+        <span class="commented_text">
+          <%= t 'comment.commented_by',
+              :name => comment.name.blank? ? t('comment.anonymous') : h(comment.name),
+              :email => h(comment.email) -%>
+        </span>
+      <% end -%>
+      <div class="comment_text">
+        <div class="align_left">
+          <img src="/images/comments.png" alt="comment"/>
+        </div>
+        <div class="align_left">
+          <%= comment.body %>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  <% end %>
+<% end %>

@@ -1,0 +1,40 @@
+<%
+# Copyright (C) 2010 Felipe Peña Pita
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License Version 3
+# as published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+-%>
+
+<div id="search_content_title">
+  <h1><%=t('emigrant.search_form.title')%></h1>
+</div>
+<div class="clear"></div>
+
+<%= render :partial => 'basic_search' %>
+
+<%= render :partial => 'advanced_search' %>
+
+<div id="inner_content_title">
+  <h1><%= t('emigrant.list') -%></h1>
+</div>
+<div class="clear"></div>
+
+<%= render :partial => @emigrants %>
+
+<%= page_entries_info @emigrants %>
+<%= will_paginate @emigrants, {:params => @params_pagination,
+                               :prev_label => t ('emigrant.pagination.prev'),
+                               :next_label => t ('emigrant.pagination.next'),
+                               :separator => t ('emigrant.pagination.separator')} %>
+
+<%= link_to t('emigrant.new'), new_emigrant_path, :class => 'link_right' %>

@@ -1,0 +1,47 @@
+<%
+# Copyright (C) 2010 Felipe Peña Pita
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License Version 3
+# as published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+-%>
+<div id="advanced_search">
+  <% form_for :search, :url => advanced_search_path, :method => "get" do |form| -%>
+      <div class="text_field">
+          <%= form.label :name, t('emigrant.name') %>
+          <%= form.text_field :name %>
+      </div>
+      <div class="text_field">
+          <%= form.label :birth_place, t('emigrant.birth_place') %>
+          <%= form.text_field :birth_place %>
+      </div>
+      <div class="text_field">
+          <%= form.label :birth_year, t('emigrant.birth_year') %>
+          <%= form.text_field :birth_year %>
+      </div>
+      <div class="text_field">
+          <%= form.label :destination_place, t('emigrant.destination_place') %>
+          <%= form.text_field :destination_place %>
+      </div>
+      <div class="text_field">
+          <%= form.label :departure_year, t('emigrant.departure_year') %>
+          <%= form.text_field :departure_year %>
+      </div>
+      <div class="text_field">
+          <%= form.label :details, t('emigrant.details') %>
+          <%= form.text_field :details %>
+      </div>
+      <div class="buttons">
+          <%= form.submit t('emigrant.search'), :id => 'advanced_search_submit' %>
+      </div>
+  <% end %>
+</div>

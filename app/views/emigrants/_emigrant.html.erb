@@ -1,0 +1,25 @@
+<%
+# Copyright (C) 2010 Felipe Peña Pita
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License Version 3
+# as published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+-%>
+<% div_for emigrant do %>
+  <h2><%= link_to_unless_current h(emigrant.name), emigrant %></h2>
+  <span class="image"><%= image_tag emigrant.photo.url(:thumb), :class => 'emigrant_photo' %></span>
+  <p><span class="fixed_text"><%= t('emigrant.birth_place') -%>:</span><span class="desc_text"><%=h emigrant.birth_place %></span></p>
+  <p><span class="fixed_text"><%= t('emigrant.birth_year') -%>:</span><span class="desc_text"><%=h emigrant.birth_year %></span></p>
+  <p><span class="fixed_text"><%= t('emigrant.destination_place') -%>:</span><span class="desc_text"><%=h emigrant.destination_place %></span></p>
+  <p><span class="fixed_text"><%= t('emigrant.departure_year') -%>:</span><span class="desc_text"><%=h emigrant.departure_year %></span></p>
+  <div class="clear"></div>
+<% end %>

@@ -1,0 +1,190 @@
+# Copyright (C) 2010 Felipe Peña Pita
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License Version 3
+# as published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  this_file_language: English
+
+  home:
+    access: "Login"
+    credits: "Credits"
+    lenguage: "Language"
+    logout: "Logout"
+    look_abroad:
+      title: "I’m an emigrant"
+      description: "If you are abroad and you want to have contact again with those who stayed at Galicia, sum your story up here so it entered RaicesGalegas.org’ system"
+    look_from_galician:
+      title: "I’m emigrants’ relative"
+      description: "Add to RaicesGalegas.org a story of some emigrant you know and you want to get in touch with again"
+    query:
+      title: "Find me..."
+      description: "Find people you want to get in touch with again, whether if you are an emmigrant looking for a relative or friend that is at your native land, or if you are a galician living at Galicia and you want to find an emmigrant"
+    raices: "Raices Galegas"
+    sidebar:
+      born_in: "Born in "
+      emigrate_in: " Having emigrated in "
+      since_year: " since "
+      title1: "How can we help you?"
+      title2: "Do you know me?"
+      text1:
+        bold: "Raíces Galegas"
+        normal: "' main aim is to help our emigrants on their origin search in our country. It would work as a link between them and people they left behind, but they couldn't forget"
+      unknown: "unknown"
+    tags:
+      title: "What do you find here?"
+    terms_of_use: "Terms of Use"
+    title: "Raices Galegas"
+    what: "Are You Looking For Your Galician Family?"
+
+  login:
+    here: "here"
+    if_you_dont: "if you haven't done it before"
+    must_be_logged_in: "You must be logged in to access this page"
+    must_be_logged_out: "You must be logged out to access this page"
+    password: "Password"
+    signup: "Sign up free"
+    submit: "Login"
+    successful:
+      login: "Successfully logged in"
+      logout: "Successfully logged out"
+    title: "Type your user"
+    username: "Username"
+
+  user:
+    activation:
+      succesful: "Congratulations, your account has been activated"
+      unable: "Unable to activate your account. Check that you provide the correct information"
+    add_user:
+      title: "Create your user"
+    create:
+      succesful: "User created successfully. You need to activate your account, check your mail for instructions"
+    email: "Email"
+    error:
+      not_activated: "User not activated yet"
+    login: "Login"
+    mail:
+      activated:
+        message: "Your account has been activated. Now, you can create your story to find your family, friends, etc"
+        subject: "Your account has been activated!!"
+        title: "Greetings {{name}}"
+      created:
+        activate: "Activate Account"
+        message: "Your account has been created. Please activate it using the following link:"
+        subject: "Please activate your new account in \"Raices Galegas\""
+        title: "Greetings {{name}}"
+      team: "The \"Raices Galegas\" team"
+    name: "Name"
+    new_user: "Create User"
+    password: "Password"
+    password_confirmation: "Password Confirmation"
+    terms:
+      accept: "I Accept the"
+      close: "Close"
+      open: "Terms of Use"
+
+  emigrant:
+    back: "Back"
+    birth_place: "Birth Place"
+    birth_year: "Birth Year"
+    comments: "Comments"
+    comment:
+      email: "Email"
+      galician_recomendation: "(It's recommended to use normative galician language to the added information)"
+      name: "Name"
+      new: "Add Comment"
+      private: "Private"
+      terms:
+        accept: "I Accept the"
+        close: "Close"
+        open: "Terms of Use"
+    created_successfully: "Emigrant's history was successfully created"
+    delete_sure: "Are you sure?"
+    departure_year: "Departure Year"
+    destination_place: "Destination"
+    destroy: "Destroy"
+    details: "Details"
+    dont_allow: "You are not Allowed to Edit this Story"
+    edit: "Edit Story"
+    galician_recomendation: "(It's recommended to use normative galician language to the added information)"
+    list: "Listing Emigrant's Stories"
+    name: "Name"
+    new: "Create New Story"
+    pagination:
+      next: "Next &gt;&gt;"
+      prev: "&lt;&lt; Previous"
+      separator: " - "
+    photo: "Photo"
+    save: "Save"
+    search: "Search"
+    search_form:
+      title: "Find who you're looking for..."
+    show: "View Emigrant's Story"
+    show_advanced_search: "Show Advanced Search"
+    tag_list: "Tags"
+    updated_successfully: "Emigrant's history was successfully updated"
+
+  comment:
+    ago: "Posted {{posted_ago}} ago"
+    anonymous: "Anonymous"
+    commented_by: "Commented by {{name}}: {{email}}"
+    mail:
+      subject: "Raices Galegas - New Comment in your Story"
+      team: "The \"Raices Galegas\" team"
+      title: "You have a new comment in your story. You can see the whole story in the next link:"
+    private_comment: "Commentario Privado"
+    private_comments_count: "{{private_comments_count}} private comments"
+
+  terms:
+    creative_commons:
+      p1: "The user is assumed to be the owner (or otherwise to have the authorisation of the author) of all the content and information that he or she publishes in this Web, understanding that the work uploaded to RaicesGalegas.org has been previously registered with the relevant bodies. Therefore, RaicesGalegas.org does not approve, or assume ownership of products, services, content, information, opinions, files or any other type of material existing on the website."
+      p2: "If the user compiles information from other users: he or she must obtain prior consent, make it clear that it is you (and not RaicesGalegas.org) who is compiling the information and publish a privacy policy that explains what information you are compiling and what it will be used for."
+      p3: "No minors may appear in uploaded content. In those exceptional cases where minors appear the user must have the express consent of the child’s parents or legal representatives."
+      p4: "RaicesGalegas.org reserve the right to veto entry to any person or organisation to our website http://www.raicesgalegas.org and at the same time reserve the right to forbid the use of any programme and/or information, in accordance with the author’s rights granted by article 14 LPI."
+      p5: "By accepting these legal terms you are conceding RaicesGalegas.org a non-exclusive, transferable licence, with the possibility of being sublet, without royalties, applicable worldwide, to use any material on the portal deemed necessary for self-promotion of the site, always respecting data protection law (Ley Orgánica de protección de datos personales 13/1999) and previously informing the person who has uploaded said content."
+      p6: "The concession of these rights will be only for the publication of content and for its commercial exploitation, in any case governed by the terms of the license \"Creative Commons Attribution - Share Alike 3.0\" as the scope stipulated in http://creativecommons.org/licenses/by-sa/3.0/deed.en"
+      p7: "The term of this concession will remain until the user deletes the said content or indeed closes the user account."
+    title: "Terms of Use"
+
+  credits:
+    author: "This application has been developed by Felipe Peña Pita and its source code has been published as free software that you can redistribute it and/or modify it under the terms of the "
+    documentation: "User Documetation"
+    documentation_odt: "odt"
+    documentation_pdf: "pdf"
+    forxa: "Project's page on Forxa de Mancomún"
+    forxa_link: "Forxa"
+    github: "Project's page on GitHub"
+    github_link: "GitHub"
+    license: "\"GNU Affero General Pulblic License Version 3\""
+    links: "Links of Interest"
+    links_text: "Below, are showed links related to application:"
+    suggestions: "For any suggestions or problems using the application, you can use the systems provided by the project's pages on the Forxa de Mancomún or GitHub."
+    title: "Credit"
+    video: "Application's demostration video"
+    youtube_link: "YouTube"
+
+  general_errors:
+    attachment_upload: "Sorry, there was an error uploading the photo (remember that only jpg and png images are allowed)"
+    html_code:
+      error_404: "The page you were looking for doesn't exist"
+      error_422: "The change you wanted was rejected"
+      error_500: "We're sorry, but something went wrong"
+
+# PAPERCLIP'S MESSAGES
+  paperclip:
+      validate_attachment_content_type_error: "is not one of the allowed file types (jpg, png)"
+      validate_attachment_presence_error: "must be set"
+      validate_attachment_size_error: "file size must be between :min and :max bytes"

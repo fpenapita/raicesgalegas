@@ -1,0 +1,39 @@
+<%
+# Copyright (C) 2010 Felipe Peña Pita
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License Version 3
+# as published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+-%>
+<div id="login">
+	<div id="inner_content_title">
+		<h1><%=t('login.title')%></h1>
+	</div>
+	<div class="clear"></div>
+    <% form_for @user_session do |form| -%>
+        <%= form.error_messages %>
+        <div class="text_field">
+            <%= form.label :login, t('login.username') %>
+            <%= form.text_field :login %>
+        </div>
+        <div class="text_field">
+            <%= form.label :password, t('login.password') %>
+            <%= form.password_field :password %>
+        </div>
+        <div>
+          <span><%= t('login.signup') -%> <%= link_to t('login.here'), signup_path -%> <%= t('login.if_you_dont') -%></span>
+        </div>
+        <div class="buttons">
+            <%= form.submit t('login.submit') %>
+        </div>
+    <% end %>
+</div>

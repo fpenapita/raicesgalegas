@@ -1,0 +1,194 @@
+<%
+# Copyright (C) 2010 Felipe Peña Pita
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License Version 3
+# as published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+-%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="gl" xml:lang="gl">
+    <head>
+        <title><%=t 'home.title'-%></title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="author" content="Felipe Peña Pita"/>
+        <meta name="keywords" content="emigración, galicia, galego, galega, busqueda, raices" />
+
+        <%= auto_discovery_link_tag :atom, atom_feed_path %>
+
+        <!-- CSSs -->
+        <%= stylesheet_link_tag 'raices' %>
+        <%= stylesheet_link_tag 'jquery.ui.potato.menu' %>
+        <%= stylesheet_link_tag 'style' %>
+        <%= stylesheet_link_tag 'not-ie7' %>
+        <!--[if IE 7]>
+          <%= stylesheet_link_tag 'ie7' %>
+        <![endif]-->
+
+        <!-- JAVASCRIPTs -->
+        <%= javascript_include_tag 'jquery' %>
+        <%= javascript_include_tag 'jquery.ui.potato.menu.min' %>
+
+        <script type="text/javascript">
+            (function($) {
+                $(document).ready(function(){
+                    $('#header_links_list').ptMenu();
+                });
+            })(jQuery);
+        </script>
+
+        <%= yield :head_contrib %>
+
+        <% if 'production'.eql?(RAILS_ENV) -%>
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-16465819-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
+        <% end -%>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <div id="header_links">
+                    <ul id="header_links_list">
+                        <li class="header_links_list_element">
+                            <% if current_user -%>
+                                <%= link_to t('home.logout'), logout_path %>
+                            <% else -%>
+                                <%= link_to t('home.access'), login_path %>
+                            <% end -%>
+                        </li>
+                        <li class="header_links_list_element">|</li>
+                        <li id="header_links_list_language" class="header_links_list_element">
+                            <a href="#"><%=t('home.lenguage')%></a>
+                            <ul>
+                                <% @available_locales.each do |key, value| -%>
+                                    <li><%=link_to h(value), (params || []).merge({:locale => key}) -%></li>
+                                <% end -%>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+				<div class="clear">&nbsp;</div>
+				<div id="logo">
+					<%= link_to image_tag('/images/RaicesGalegasLogo.png'), {:controller => 'public', :action => 'index'}, :class => 'home_page_link' %>
+				</div>
+				<div id="help_1">
+					<div class="help_info_img">
+						<img src="/images/info.png" alt="info"/>
+					</div>
+					<div class="help_info">
+						<img src="/images/find.png"  alt="find" />
+						<%=t('home.query.description')%>
+					</div>
+				</div>
+
+				<div id="help_2">
+					<div class="help_info_img">
+						<img src="/images/info.png" alt="info"/>
+					</div>
+					<div class="help_info">
+						<%=t('home.look_from_galician.description')%>
+					</div>
+				</div>
+
+				<div id="help_3">
+					<div class="help_info_img">
+						<img src="/images/info.png" alt="info" />
+					</div>
+					<div class="help_info">
+						<%=t('home.look_abroad.description')%>
+					</div>
+				</div>
+            </div>
+			<!-- end #header -->
+            <div id="menu">
+              <ul>
+                <li id="menu_entry_1">
+                  <%= active_link_to t('home.query.title'), emigrants_path,
+                    :active => { :active_class => 'current_page_item',
+                                 :when => :self_only }  %>
+                </li>
+                <li id="menu_entry_2">
+                  <%= active_link_to t('home.look_from_galician.title'), family_path,
+                    :active => { :active_class => 'current_page_item' } -%>
+                </li>
+                <li id="menu_entry_3">
+                  <%= active_link_to t('home.look_abroad.title'), i_am_emigrant_path,
+                    :active => { :active_class => 'current_page_item' } -%>
+                </li>
+              </ul>
+            </div>
+            <!-- end #menu -->
+            <div id="page">
+
+			<div id="notifications">
+	                <% if flash[:error] %>
+	                    <div id="error">
+	                        <%= flash[:error] %>
+	                    </div>
+	                <% end %>
+
+	                <% if flash[:notice] %>
+	                    <div id="notice">
+	                        <%= flash[:notice] %>
+	                    </div>
+	                <% end %>
+					<div class="clear"></div>
+				</div>
+
+				<div id="root_content">
+					<div id="content">
+		               	<%= yield -%>
+					</div>
+
+					<div id="sidebar">
+						<ul>
+							<li>
+								<h2><%=t('home.sidebar.title1')%></h2>
+								<p><strong><%=t('home.sidebar.text1.bold')%></strong><%=t('home.sidebar.text1.normal')%></p>
+							</li>
+							<li>
+								<h2><%=t('home.sidebar.title2')%></h2>
+								<%= render(:partial => 'layouts/highlighted_emigrants')%>
+							</li>
+						</ul>
+					</div>
+					<!-- end #sidebar -->
+					<div class="clear">&nbsp;</div>
+				</div>
+
+      </div>
+			<!-- end #page -->
+
+    </div>
+		<div id="footer-content">
+      <a href="http://validator.w3.org/check?uri=referer" title="Validate XHTML">xhtml</a>
+      |
+      <a href="http://jigsaw.w3.org/css-validator/check/referer?warning=no&amp;profile=css3" title="Validate CSS">css</a>
+      |
+      <%= link_to t('home.terms_of_use'), terms_of_use_path %>
+      |
+      <%= link_to t('home.credits'), credits_path %>
+		</div>
+		<div id="footer">
+			<p> (c) 2010 www.raicesgalegas.com Design by <a href="http://www.nodethirtythree.com">nodethirtythree</a> and <a href="http://www.freecsstemplates.org">Free CSS Templates</a>.</p>
+		</div>
+    </body>
+</html>
